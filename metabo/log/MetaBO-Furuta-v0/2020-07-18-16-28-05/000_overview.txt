@@ -1,0 +1,145 @@
+********* OVERVIEW OF RUN *********
+Logpath        : /home/ali/Documents/MetaBO/metabo/log/MetaBO-Furuta-v0/2020-07-18-16-28-05
+Logfile created: 2020-07-18-16-28-09
+Environment-ID:  MetaBO-Furuta-v0
+Environment-kwargs:
+{
+  "env_id": "MetaBO-Furuta-v0",
+  "D": 4,
+  "f_type": "Furuta",
+  "f_opts": {
+    "furuta_domain": [
+      [
+        -0.5,
+        0.2
+      ],
+      [
+        -1.6,
+        4.0
+      ],
+      [
+        -0.1,
+        0.04
+      ],
+      [
+        -0.04,
+        0.1
+      ]
+    ],
+    "mass_arm_low": 0.07125000000000001,
+    "mass_arm_high": 0.11875,
+    "mass_pendulum_low": 0.018000000000000002,
+    "mass_pendulum_high": 0.03,
+    "length_arm_low": 0.06375,
+    "length_arm_high": 0.10625000000000001,
+    "length_pendulum_low": 0.09675,
+    "length_pendulum_high": 0.16125,
+    "pos": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "features": [
+    "posterior_mean",
+    "posterior_std",
+    "x"
+  ],
+  "T_min": 1,
+  "T_max": 25,
+  "n_init_samples": 0,
+  "pass_X_to_pi": false,
+  "kernel_lengthscale": [
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "kernel_variance": 1.5,
+  "noise_variance": 0.01,
+  "use_prior_mean_function": true,
+  "local_af_opt": true,
+  "N_MS": 10000,
+  "N_LS": 1000,
+  "k": 1,
+  "reward_transformation": "neg_linear"
+}
+PPO-parameters:
+{
+  "batch_size": 1200,
+  "max_steps": 2400000,
+  "minibatch_size": 24,
+  "n_epochs": 4,
+  "lr": 0.0001,
+  "epsilon": 0.15,
+  "value_coeff": 1.0,
+  "ent_coeff": 0.01,
+  "gamma": 0.98,
+  "lambda": 0.98,
+  "loss_type": "GAElam",
+  "normalize_advs": true,
+  "n_workers": 10,
+  "env_id": "MetaBO-Furuta-v0",
+  "seed": 0,
+  "env_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "policy_options": {
+    "activations": "relu",
+    "arch_spec": [
+      200,
+      200,
+      200,
+      200
+    ],
+    "use_value_network": true,
+    "t_idx": -2,
+    "T_idx": -1,
+    "arch_spec_value": [
+      200,
+      200,
+      200,
+      200
+    ]
+  }
+}
+Batchrecorder:
+{
+  "size": 1200,
+  "n_workers": 10,
+  "worker_batch_sizes": [
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120
+  ],
+  "env_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "deterministic": false
+}

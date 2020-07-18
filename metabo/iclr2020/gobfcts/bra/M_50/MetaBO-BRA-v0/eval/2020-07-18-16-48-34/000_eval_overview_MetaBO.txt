@@ -1,0 +1,39 @@
+********* OVERVIEW ENVIRONMENT PARAMETERS *********
+Evaluation timestamp: 2020-07-18-16-48-37
+Environment-ID: MetaBO-BRA-v0
+Environment-kwargs:
+{
+  "env_id": "MetaBO-BRA-v0",
+  "D": 2,
+  "f_type": "BRA-var",
+  "f_opts": {
+    "bound_translation": 0.1,
+    "bound_scaling": 0.1
+  },
+  "features": [
+    "posterior_mean",
+    "posterior_std",
+    "timestep",
+    "budget",
+    "x"
+  ],
+  "T": 30,
+  "n_init_samples": 0,
+  "pass_X_to_pi": false,
+  "kernel_lengthscale": [
+    0.235,
+    0.578
+  ],
+  "kernel_variance": 2.0,
+  "noise_variance": 8.9e-16,
+  "use_prior_mean_function": false,
+  "local_af_opt": true,
+  "N_MS": 1000,
+  "N_LS": 1000,
+  "k": 5,
+  "reward_transformation": "none"
+}
+Environment-seeds:
+[100 101 102 103 104 105 106 107 108 109]
+Policy-specs:
+{}

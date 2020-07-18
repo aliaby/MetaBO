@@ -20,7 +20,7 @@
 # ******************************************************************
 
 import os
-
+from namedlist import namedlist
 os.environ["OMP_NUM_THREADS"] = "1"  # on some machines this is needed to restrict torch to one core
 
 from collections import namedtuple
@@ -32,8 +32,24 @@ import torch
 import itertools
 import time
 
-Transition = namedtuple("Transition", ["state", "action", "reward", "value", "new", "tdlamret", "adv"])
+# Transition = namedtuple("Transition", ["state", "action", "reward", "value", "new", "tdlamret", "adv"])
 
+class Transition:
+
+    def __init__(self, state, action, reward, value, new, tdlamret, adv):
+        self.state = state
+        self.action = action
+        self.reward = reward
+        self.value = value
+        self.new = new
+        self.tdlamret = tdlamret
+        self.adv = adv
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        return self.state, self.action, self.reward, self.value, self.new, self.tdlamret, self.adv
 
 class EnvRunner(mp.Process):
     def __init__(self, worker_id, size, env_id, seed, policy_fn, task_queue, res_queue, deterministic=False):

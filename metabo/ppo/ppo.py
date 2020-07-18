@@ -127,6 +127,7 @@ class PPO:
 
             n_minibatches = 0
             for minibatch in self.batch_recorder.iterate(self.params["minibatch_size"], shuffle=True):
+                # print(*zip(*minibatch))
                 transitions = Transition(*zip(*minibatch))
                 states = torch.from_numpy(np.stack(transitions.state).astype(np.float32)).to(self.device)
                 actions = torch.from_numpy(np.stack(transitions.action).astype(np.float32)).to(self.device)
